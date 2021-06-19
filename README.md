@@ -14,11 +14,9 @@ This project will be a simple calculator, primarily coded in JavaScript.
 - JavaScript
 - CSS
 - HTML
-- Test-Driven Development
 
 ## Tools used
 - VSCode
-- Jest
 - Live Server
 - Git / GitHub
 

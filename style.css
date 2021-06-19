@@ -1,0 +1,34 @@
+.container {
+    display: grid; 
+    width: 500px; 
+    height: 700px; 
+    margin: 0 auto; 
+}
+
+.calculator {
+    display: grid; 
+    grid-template-areas: 
+    "display display display display"
+    "numbers numbers numbers operator"
+    "numbers numbers numbers operator"
+    "numbers numbers numbers operator"
+    "numbers numbers numbers operator";
+    gap: 2rem; 
+}
+.display {
+    grid-area: display; 
+    width: 100%; 
+    height: 50px; 
+}
+
+.numbers > button {
+    grid-area: numbers;
+    width: 30%; 
+    margin: 1%; 
+}
+
+.operators > button {
+    grid-area: operator;
+    width: 100%; 
+    margin: 1%;
+}
