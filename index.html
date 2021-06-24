@@ -5,44 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>JavaScript Mathematical Calculator</title>
 </head>
 <body>
     <header>
-        <h1>James's TOP Calculator</h1>
+        <heading>
+            <a href="https://jdelles.github.io"><span>J</span>ames Delles</a>
+        </heading>
+        <nav class="fullDisplay" id="navigation">
+            <a href="https://jdelles.github.io">Projects</a>
+            <a href="https://jdelles.github.io">Resources</a>
+            <a href="https://jdelles.github.io">Contact</a>
+            <a class="hamburger" href="javascript:void(0);" onclick="dropDown()">
+                <i class="material-icons">menu</i>
+            </a>
+        </nav>
     </header>
-    <main class="container">
-        <section class="display">0.0</section>
-        <section class="calculator">
-            <button id="C">Clear</button>
-            <button id="D">Delete</button>
+    <main>
+        <section class="container">
+            <div class="display">0.0</div>
+            <div class="calculator">
+                <button id="C">Clear</button>
+                <button id="D">Delete</button>
 
-            <button id="7">7</button>
-            <button id="8">8</button>
-            <button id="9">9</button>
-            <button id="/">&#xf7;</button>
+                <button id="7">7</button>
+                <button id="8">8</button>
+                <button id="9">9</button>
+                <button id="/">&#xf7;</button>
 
-            <button id="4">4</button>
-            <button id="5">5</button>
-            <button id="6">6</button>
-            <button id="*">&#xd7;</button>
+                <button id="4">4</button>
+                <button id="5">5</button>
+                <button id="6">6</button>
+                <button id="*">&#xd7;</button>
 
-            <button id="1">1</button>
-            <button id="2">2</button>
-            <button id="3">3</button>
-            <button id="-">&#x2212;</button>
+                <button id="1">1</button>
+                <button id="2">2</button>
+                <button id="3">3</button>
+                <button id="-">&#x2212;</button>
 
-            <button id="dot">.</button>
-            <button id="0">0</button>
-            <button id="=">&#x3d;</button>
-            <button id="+">&#x2b;</button>
+                <button id="dot">.</button>
+                <button id="0">0</button>
+                <button id="=">&#x3d;</button>
+                <button id="+">&#x2b;</button>
+            </div>
         </section>
     </main>
     <footer> 
-        <section id="copyright">
-            <p></p>
+        <section id="social">
+            <a href="https://www.github.com/jdelles"><img src="images/GitHub.png" alt="Links to my GitHub portfolio"></a>
+            <a href="https://www.twitter.com/jamesdelles"><img src="images/Twitter.png" alt="Links to my Twitter profile"></a>
+            <a href="https://www.linkedin.com/in/jamesdelles"><img src="images/LinkedIn.png" alt="Links to my LinkedIn profile"></a>
         </section>
     </footer>
     <script src="script.js"></script>
+    <script src="portfolio.js"></script>
 </body>
 </html>

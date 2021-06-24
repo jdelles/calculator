@@ -1,6 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 
 :root {
+
+    /* TEMPLATE PORTFOLIO COLORS */ 
+
+
+    --color-white: #fbfdfc; 
+    --color-sand: #c9c8b4; 
+    --color-light-green: #acc38b;
+    --color-green: #778f51;
+    --color-dark-green: #456c35; 
+
+    /* CALCULATOR COLORS */ 
+
     --page-background: #1f8ac0; 
     --background: #efc9af; 
     --text: #f2f2f2; 
@@ -23,18 +35,86 @@ body {
     background-color: var(--page-background);
     color: var(--text);
     font-family: 'IBM Plex Mono', monospace;
-  }
-
-h1 {
-    width: 100%; 
-    text-align: center; 
-    margin: 25px; 
-    font-size: 3rem; 
+    font-size: 2rem;
 }
 
+main {
+    min-height: calc(100vh - 150px); 
+}
+
+header {
+    width: 100%; 
+    background-color: var(--color-white);
+    border-bottom: 2px solid var(--color-dark-green); 
+    display: grid; 
+    grid-template-areas: "me navigation"; 
+}
+
+heading {
+    grid-area: me; 
+    min-width: 50%; 
+    margin-left: 20%; 
+    display: flex; 
+    justify-content: flex-start;
+}
+
+nav {
+    grid-area: navigation; 
+    min-width: 50%; 
+    margin-right: 20%; 
+    display: flex; 
+    justify-content: flex-end;
+    gap: 2rem; 
+    text-transform: uppercase; 
+}  
+  
+heading a, 
+nav a {
+    display: block; 
+    text-transform: uppercase; 
+    color: var(--color-sand);
+    text-decoration: none;
+    border-bottom: 3px solid transparent; 
+    cursor: pointer;
+    font-size: 20px; 
+    margin: 9px; 
+}
+
+heading span {
+    color: var(--color-dark-green); 
+}
+  
+heading a:hover, 
+nav a:hover {
+    border-bottom: 3px solid var(--color-sand); 
+}
+
+.hamburger {
+    display: none; 
+}
+
+@media screen and (max-width: 768px) {
+    nav a {
+        display: none;
+    }
+    nav a:last-child {
+      display: block;
+    }
+  }
+
+nav a.responsive {
+    position: relative;
+}
+nav a:last-child.responsive {
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: right; 
+    display: block; 
+}
 
 .container {
-    max-width: 400px;
+    max-width: 350px;
     border: 2px solid var(--border);
     border-radius: 20px;
     margin: 50px auto;
@@ -65,11 +145,12 @@ h1 {
 }
 
 button {
-    padding: 20px;
+    padding: 10px 20px;
     border: 2px solid var(--border);
     border-radius: 8px;
     background-color: var(--button);
-    font-size: 20px;
+    color: var(--text); 
+    font-size: inherit; 
     cursor: pointer;
 }
 
@@ -79,4 +160,17 @@ button:hover {
 
 button:active {
     background: var(--text);
+    color: var(--display-text);
   }
+
+footer {
+    display: flex; 
+    justify-content: center;
+    background: var(--color-white); 
+}
+
+footer img {
+    width: 32px; 
+    height: auto; 
+    margin: 9px 18px; 
+}
