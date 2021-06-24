@@ -1,34 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+:root {
+    --page-background: #1f8ac0; 
+    --background: #efc9af; 
+    --text: #f2f2f2; 
+    --button: #104c91;  
+    --button-hover: #1f8ac0;  
+    --border: black;  
+    --display: #f2f2f2; 
+    --display-text: #104c91; 
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+    background-color: var(--page-background);
+    color: var(--text);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+h1 {
+    width: 100%; 
+    text-align: center; 
+    margin: 25px; 
+    font-size: 3rem; 
+}
+
+
 .container {
-    display: grid; 
-    width: 500px; 
-    height: 700px; 
-    margin: 0 auto; 
+    max-width: 400px;
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: var(--background);
+}
+
+.display {
+    min-height: 70px;
+    padding: 20px;
+    border: 2px solid var(--border); 
+    margin-bottom: 15px;
+    background-color: var(--display);
+    color: var(--display-text); 
+    font-size: 2rem;
+    text-align: right;
 }
 
 .calculator {
-    display: grid; 
-    grid-template-areas: 
-    "display display display display"
-    "numbers numbers numbers operator"
-    "numbers numbers numbers operator"
-    "numbers numbers numbers operator"
-    "numbers numbers numbers operator";
-    gap: 2rem; 
-}
-.display {
-    grid-area: display; 
-    width: 100%; 
-    height: 50px; 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
 
-.numbers > button {
-    grid-area: numbers;
-    width: 30%; 
-    margin: 1%; 
+#C, 
+#D {
+    grid-column: span 2;
 }
 
-.operators > button {
-    grid-area: operator;
-    width: 100%; 
-    margin: 1%;
+button {
+    padding: 20px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--button);
+    font-size: 20px;
+    cursor: pointer;
 }
+
+button:hover {
+    background-color: var(--button-hover); 
+}
+
+button:active {
+    background: var(--text);
+  }
