@@ -121,7 +121,7 @@ nav a:last-child.responsive {
 }
 
 .display {
-    min-height: 70px;
+    min-height: 86px;
     padding: 20px;
     border: 2px solid var(--border); 
     margin-bottom: 15px;

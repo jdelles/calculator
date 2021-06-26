@@ -54,6 +54,10 @@ function divide(num1, num2) {
     return rtn; 
 }
 
+/*
+ * Accepts the two numbers to be calculated and the operator. Calls the appropriate
+ * mathematical function based on the operator given
+ */
 function operation(num1, num2, operator) {
     switch(operator) {
         case "+": 
@@ -74,26 +78,60 @@ function operation(num1, num2, operator) {
     }
 }
 
+/*
+ * Clear and delete key functionality
+ */
+
 function clear() {
     display.textContent = ''; 
     firstNum = ''; 
     secondNum = ''; 
     operator = ''; 
+    rtn = 0; 
 }
 
 function backspace() {
     display.textContent = display.textContent.toString().slice(0, -1); 
 }
 
+/*
+ * Stores the current display value as firstNum. This supports chaining calculations
+ */
 function storeNum() {
-    firstNum = Number.parseInt(display.textContent); 
+    firstNum = Number(display.textContent); 
     display.textContent = ''; 
 }
 
+/*
+ * Rounds results to the hundreths place 
+ */
+function round(num) {
+    return Math.round(num * 100) / 100; ; 
+}
+
+/*
+ * Checks if there is already a "." and adds one if not
+ */
+function dot() {
+    let test = display.textContent.toString(); 
+    test.split(); 
+    for (let i = 0; i < test.length; i++) {
+        if ("." === test[i]) {
+            return; 
+        }
+    }
+    display.textContent += "."; 
+}
+
+/**
+ * Main function
+ * - Called by clicking any button on the calculator
+ * - Parses those clicks into action
+ */
 function keyPress(key) {
     if (key === '=') {
-        secondNum = Number.parseInt(display.textContent); 
-        display.textContent = operation(firstNum, secondNum, operator); 
+        secondNum = Number(display.textContent); 
+        display.textContent = round(operation(firstNum, secondNum, operator)); 
     }
     if (key === 'D') {
         backspace(); 
@@ -103,12 +141,15 @@ function keyPress(key) {
         clear(); 
         return;  
     }
+    if (key === 'dot') {
+        dot(); 
+    }
     if (key === '+' || key === '-' || key === '*' || key === '/') {
         storeNum(); 
         operator = key; 
         return; 
     }
-    if (key >= 0 && key < 9) {
+    if (0 <= key && key <= 9) {
         display.textContent = display.textContent + key; 
     }
 } 
